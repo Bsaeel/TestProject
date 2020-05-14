@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'TestProject';
+  count = [{ label: "name", type: 'text' }, { label: "email", type: "number" }];
 }
