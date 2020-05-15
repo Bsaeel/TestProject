@@ -1,7 +1,17 @@
 <div>
-  <div *ngFor="let data of count">
-    <div id=data.label>
-      <app-single-form [hero]=data.label [type]=data.type></app-single-form>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+
+    <div *ngFor="let element of formGroupComponent" class="form-row">
+      <app-single-form [element]="element" [form]="form">
+      </app-single-form>
     </div>
+
+    <div class="form-row">
+      <button type="submit" [disabled]="!form.valid">Save</button>
+    </div>
+  </form>
+
+  <div *ngIf="payLoad" class="form-row">
+    <strong>Saved the following values</strong><br>{{payLoad}}
   </div>
 </div>
