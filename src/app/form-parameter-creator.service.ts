@@ -3,6 +3,7 @@ import { InputModel } from './input-model';
 import { DropDownInput } from './drop-down-input';
 import { TextInput } from './text-input';
 import { of } from 'rxjs';
+import { CheckBoxInput } from './check-box-input';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,7 @@ export class FormParameterCreatorService {
   //TODO: get from a remote source of metadata
   getFormParameter() {
 
-    let formParameters: InputModel<string>[] = [
-
-
+    let formParameters: InputModel<any>[] = [
 
       new TextInput({
         key: 'firstName',
@@ -34,7 +33,7 @@ export class FormParameterCreatorService {
         key: 'phoneNumber',
         label: 'Phone Number',
         type: 'number',
-        order: 2
+        order: 3
       }),
       new DropDownInput({
         key: 'brave',
@@ -45,7 +44,13 @@ export class FormParameterCreatorService {
           { key: 'pune', value: 'Pune' },
           { key: 'mumbai', value: 'Mumbai' }
         ],
-        order: 3
+        order: 4
+      }),
+      new CheckBoxInput({
+        key: 'run',
+        label: 'Run',
+        value: true,
+        order: 5
       }),
     ];
 

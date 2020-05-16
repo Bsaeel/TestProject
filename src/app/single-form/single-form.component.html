@@ -2,7 +2,8 @@
     <label [attr.for]="element.key">{{element.label}}</label>
 
     <div [ngSwitch]="element.controlType">
-
+        <input *ngSwitchCase="'checkbox'" [formControlName]="element.key" [id]="element.key" [type]="element.type"
+            [(ngModel)]="element.value" (change)="element.value = checkedValue.checked" #checkedValue />
         <input *ngSwitchCase="'textbox'" [formControlName]="element.key" [id]="element.key" [type]="element.type">
         <input *ngSwitchCase="'number'" [formControlName]="element.key" [id]="element.key" [type]="element.type">
         <select [id]="element.key" *ngSwitchCase="'dropdown'" [formControlName]="element.key">
