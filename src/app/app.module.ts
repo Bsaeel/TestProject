@@ -7,6 +7,9 @@ import { SingleFormComponent } from './single-form/single-form.component';
 import { TextInputComponent } from './text-input/text-input.component';
 import { DropdownInputComponent } from './dropdown-input/dropdown-input.component';
 import { CheckboxInputComponent } from './checkbox-input/checkbox-input.component';
+import { FormcontainerComponent } from './formcontainer/formcontainer.component';
+import { FormControlCreatorService } from './form-control-creator.service';
+import { FormParameterCreatorService } from './form-parameter-creator.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,8 @@ import { CheckboxInputComponent } from './checkbox-input/checkbox-input.componen
     SingleFormComponent,
     TextInputComponent,
     DropdownInputComponent,
-    CheckboxInputComponent
+    CheckboxInputComponent,
+    FormcontainerComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,7 @@ import { CheckboxInputComponent } from './checkbox-input/checkbox-input.componen
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [FormControlCreatorService, FormParameterCreatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
