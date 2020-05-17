@@ -12,7 +12,7 @@ import { FormParameterCreatorService } from './form-parameter-creator.service';
 })
 export class AppComponent {
   title: any;
-  formGroupComponent$: Observable<InputModel<any>[]>;
+  formGroupComponent$: Observable<InputModel<any>[][]>;
 
   constructor(service: FormParameterCreatorService) {
     this.formGroupComponent$ = service.getFormParameter();

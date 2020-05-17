@@ -12,6 +12,8 @@ export class SingleFormComponent {
 
   @Input() element: InputModel<string>;
   @Input() form: FormGroup;
+  
+  
   get isValid() { return this.form.controls[this.element.key].valid; }
 
 }

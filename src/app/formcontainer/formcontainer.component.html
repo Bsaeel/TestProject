@@ -1,17 +1,26 @@
 <div>
+<div *ngFor="let formGr of form.controls;">
+    <h3>Application Number {{form.controls.indexOf(formGr)}}</h3>
     <form (ngSubmit)="onSubmit()" [formGroup]="form">
 
-        <div *ngFor="let element of formGroupComponent" class="form-row">
-            <app-single-form [element]="element" [form]="form">
-            </app-single-form>
-        </div>
+            <div *ngFor="let element of formGroupComponent[form.controls.indexOf(formGr)]" class="form-row">
+                <app-single-form [element]="element" [form]="formGr">
+                </app-single-form>
+            </div>
 
-        <div class="form-row">
-            <button type="submit" [disabled]="!form.valid">Save</button>
-        </div>
     </form>
+        <!-- <div *ngFor="let element of formGr" class="form-row">
+            <app-single-form [element]="element" [form]="formGr">
+            </app-single-form>
+        </div> -->
+        <div class="form-row" *ngIf="form.controls.indexOf(formGr) == (form.controls.length - 1) ">
+            <button type="submit" [disabled]="!formGr.valid">Save</button>
+        </div>
 
+</div>
+        
     <div *ngIf="payLoad" class="form-row">
         <strong>Saved the following values</strong><br>{{payLoad}}
     </div>
+
 </div>
