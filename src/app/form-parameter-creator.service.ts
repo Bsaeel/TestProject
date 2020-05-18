@@ -14,8 +14,8 @@ export class FormParameterCreatorService {
 
     let formParameters: InputModel<any>[][] = [
 
-      [ new TextInput({
-        key: 'firstName',
+      [new TextInput({
+        key: 'firstName1',
         label: 'First name 1',
         value: 'Tom',
         required: true,
@@ -23,20 +23,20 @@ export class FormParameterCreatorService {
       }),
 
       new TextInput({
-        key: 'emailAddress',
+        key: 'emailAddress1',
         label: 'Email 1',
         type: 'email',
         required: true,
         order: 2
       }),
       new TextInput({
-        key: 'phoneNumber',
+        key: 'phoneNumber1',
         label: 'Phone Number 1',
         type: 'number',
         order: 3
       }),
       new DropDownInput({
-        key: 'brave',
+        key: 'brave1',
         label: 'City 1',
         options: [
           { key: 'daman', value: 'Daman' },
@@ -44,15 +44,11 @@ export class FormParameterCreatorService {
           { key: 'pune', value: 'Pune' },
           { key: 'mumbai', value: 'Mumbai' }
         ],
-        order: 3
+        order: 4
       })],
-      
-    
-      
 
-
-     [ new TextInput({
-        key: 'firstName',
+      [new TextInput({
+        key: 'firstName2',
         label: 'First name 2',
         value: 'Harrison',
         required: true,
@@ -60,20 +56,20 @@ export class FormParameterCreatorService {
       }),
 
       new TextInput({
-        key: 'emailAddress',
+        key: 'emailAddress2',
         label: 'Email 2',
         type: 'email',
         required: true,
         order: 2
       }),
       new TextInput({
-        key: 'phoneNumber',
+        key: 'phoneNumber2',
         label: 'Phone Number 2',
         type: 'number',
         order: 2
       }),
       new DropDownInput({
-        key: 'brave',
+        key: 'brave2',
         label: 'City 2',
         options: [
           { key: 'barca', value: 'Barcelona' },

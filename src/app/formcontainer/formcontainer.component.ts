@@ -22,8 +22,10 @@ export class FormcontainerComponent implements OnInit {
 
   }
 
+
   onSubmit() {
     this.payLoad = JSON.stringify(this.form.getRawValue());
+    console.log(this.payLoad, this.form.getRawValue())
   }
 
 }
